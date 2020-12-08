@@ -13,7 +13,7 @@ export default function Stories (){
             <UserStoriesPhotos photoSrc={require("../Images/usuario4.png")}  userName="Giovanni" />
             <UserStoriesPhotos photoSrc={require("../Images/usuario7.png")}  userName="Julia" />
             <UserStoriesPhotos photoSrc={require("../Images/usuario6.png")}  userName="Isabella" />
-            <UserStoriesPhotos photoSrc={require("../Images/inri-cristo.jpg")}  userName="Inri" />
+            <UserStoriesPhotos photoSrc={require("../Images/inri-cristo.jpg")}  userName="Roberto" />
 
 
 
