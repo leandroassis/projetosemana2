@@ -17,10 +17,7 @@ export default function App() {
       <Counter/>
       <Body />
       <Footer/>
-      <View>
-        <Post/>
-      </View>
-      
+      <Post/>
     </View>
   );
 }
@@ -30,5 +27,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
+    height: "100%",
   },
 });

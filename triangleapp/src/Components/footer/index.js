@@ -15,6 +15,5 @@ export default function Body() {
 const styles = StyleSheet.create({
     container:{
         flexDirection: "row",
-        height:20,
     },
 });
