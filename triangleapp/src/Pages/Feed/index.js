@@ -76,7 +76,7 @@ export default function Feed() {
       data={list} 
       keyExtractor = {(item) =>item.id.toString() }
       renderItem={({item}) => <Item imageUser={item.userPhoto} nickname={item.nickname} username={item.username} message={item.message} imagePost={item.photoMessage} likesCount={item.likesCount}/>
-       }    />
+       } />
       
       
       <Footer/>
@@ -89,7 +89,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
     height: "100%",
   }
 });
