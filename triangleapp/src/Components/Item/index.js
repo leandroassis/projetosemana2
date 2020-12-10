@@ -1,7 +1,7 @@
-import React from 'react';
-import { StyleSheet, Text, View,Image } from 'react-native';
+import React,{useState} from 'react';
+import { StyleSheet, Text, View,Image, TouchableOpacity} from 'react-native';
 
-export default function Item ({nickname, username,message,imageUser,imagePost}) {
+export default function Item ({nickname, username,message,imageUser,imagePost,likesCount}) {
    
     function renderImage(){
         if(imagePost) {
@@ -14,6 +14,11 @@ export default function Item ({nickname, username,message,imageUser,imagePost}) 
         }
 
 
+    }
+
+    const[counter,setCounter] = useState (likesCount)
+    function increment (){
+        setCounter (counter+1);
     }
 
 
@@ -39,7 +44,12 @@ export default function Item ({nickname, username,message,imageUser,imagePost}) 
                     {renderImage()}    
                     
                     <View style={styles.containerIcons}>
-                        <Image style={styles.like} source={require("../Images/like-icon-removebg-preview.png")}/>
+
+                    <TouchableOpacity onPress={increment}>
+                        <Image style={styles.like} source={require("../Images/like-icon-removebg-preview.png")} />
+                    </TouchableOpacity>
+                        
+                        <Text style={styles.likeCount}>{counter}</Text>
                         <Image style={styles.coment} source={require("../Images/coment-icon-removebg-preview.png")}/>
                         <Image style={styles.rt} source={require("../Images/rt-icon-removebg-preview.png")}/>
                     </View>
@@ -136,6 +146,9 @@ export default function Item ({nickname, username,message,imageUser,imagePost}) 
             width:40,
             marginLeft:20,
             marginRight:20
+        },
+        likeCount:{
+            paddingTop:10
         }
 
 })

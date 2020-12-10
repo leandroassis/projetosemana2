@@ -19,7 +19,8 @@ export default function Feed() {
     nickname: "Júlia",
     username: "@julia_chagas",
     message: "Amando fazer o projeto da Fluxo!",
-    photoMessage: require("../../Components/Images/orangeHeart.jpg")
+    photoMessage: require("../../Components/Images/orangeHeart.jpg"),
+    likesCount: 8
    },
    {
     id:2,
@@ -27,14 +28,17 @@ export default function Feed() {
     nickname: "Bruno",
     username: "@bruno_aguiar",
     message: "Ajudei a galera no Git!",
-    photoMessage:""
+    photoMessage:"",
+    likesCount:5
    },
    {
     id:3,
     userPhoto: require("../../Components/Images/usuario5.png"),
     nickname: "Ruth",
     username: "@ruth_menezes",
-    message: "A galera do PAME 20.1.2 tá dando a vida!!"
+    message: "A galera do PAME 20.1.2 tá dando a vida!!",
+    photoMessage:"",
+    likesCount:9
    },
    {
     id:4,
@@ -42,7 +46,9 @@ export default function Feed() {
     nickname: "Gaia",
     username: "@dog_gaia",
     message: "auauau!",
-    photoMessage: require("../../Components/Images/fotodog.jpeg")
+    photoMessage: require("../../Components/Images/fotodog.jpeg"),
+    likesCount:600
+    
    },
    {
     id:5,
@@ -50,7 +56,9 @@ export default function Feed() {
     nickname: "Triangle",
     username: "@triangleApp",
     message: "Bem Vindos ao Triangle!",
-    photoMessage: require("../../Components/Images/logo_triangle.jpg")
+    photoMessage: require("../../Components/Images/logo_triangle.jpg"),
+    likesCount:2
+    
    }
  ]
 
@@ -67,7 +75,7 @@ export default function Feed() {
       <FlatList 
       data={list} 
       keyExtractor = {(item) =>item.id.toString() }
-      renderItem={({item}) => <Item imageUser={item.userPhoto} nickname={item.nickname} username={item.username} message={item.message} imagePost={item.photoMessage}/>
+      renderItem={({item}) => <Item imageUser={item.userPhoto} nickname={item.nickname} username={item.username} message={item.message} imagePost={item.photoMessage} likesCount={item.likesCount}/>
        }    />
       
       
