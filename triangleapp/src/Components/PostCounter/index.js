@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-const Counter = () => {
-  const [count, setCount] = useState(6);
+const PostCounter = () => {
+  const [count, setCount] = useState(5);
   const onPress = () => setCount(prevCount => prevCount + 1);
 
   return (
@@ -14,7 +14,7 @@ const Counter = () => {
         style={styles.button}
         onPress={onPress}
       >
-        <Text style={{fontSize:15}}></Text>
+        <Text style={{fontSize:15}}>add</Text>
       </TouchableOpacity>
     </View>
   );
@@ -23,24 +23,27 @@ const Counter = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    width: 200,
-    height: 50
+    flexDirection:"row",
+    
+    backgroundColor: "#a9a9a9",
+    marginBottom:30,
+    paddingTop:15,
+    
   },
   button: {
-    alignItems: "center",
-    backgroundColor: "#fff",
-    height:20,
-    width:100,
-    marginLeft: 130,
+      alignItems:"center",
+      paddingLeft:10,
+     
+    
   },
   countContainer: {
-    alignItems: "center",
-    marginLeft: 20,
-    width: 80,
-    height: 5
-
+      height:40,
+      backgroundColor:"#f3833f",
+      justifyContent:"center",
+      alignItems:"center",
+      marginHorizontal:10
+   
   }
 });
 
-export default Counter;
+export default PostCounter;

@@ -1,7 +1,27 @@
 import React from 'react';
-import { StyleSheet, StatusBar, Text, View, FlatList,Image } from 'react-native';
+import { StyleSheet, Text, View,Image } from 'react-native';
 
 export default function Item ({nickname, username,message,imageUser,imagePost}) {
+   
+    function renderImage(){
+        if(imagePost) {
+            return(
+                <Image style={styles.photo} source={imagePost}/>
+            )
+        }
+        else {
+            return null;
+        }
+
+
+    }
+
+
+
+
+
+
+
     return(
         <View style={styles.containerMain}>
                 
@@ -10,20 +30,20 @@ export default function Item ({nickname, username,message,imageUser,imagePost}) 
                     <Text style={styles.headPost}>{nickname} - {username}</Text>
                 </View>
 
-                <View style={styles.containerPost}>
+                
                     <View style={styles.containerText}>
                         
                         <Text style={styles.messagePost}>{message}</Text>
                     </View>
-                    <View style={styles.containerPhotoPost}>
-                        <Image style={styles.postPhoto} source={imagePost}/>    
-                    </View>
+                    
+                    {renderImage()}    
+                    
                     <View style={styles.containerIcons}>
                         <Image style={styles.like} source={require("../Images/like-icon-removebg-preview.png")}/>
                         <Image style={styles.coment} source={require("../Images/coment-icon-removebg-preview.png")}/>
                         <Image style={styles.rt} source={require("../Images/rt-icon-removebg-preview.png")}/>
                     </View>
-                </View>
+                
 
                 
 
@@ -83,26 +103,39 @@ export default function Item ({nickname, username,message,imageUser,imagePost}) 
         },
         containerIcons:{
             marginTop:15,
+            marginBottom:15,
             flexDirection:"row",
-            justifyContent:"space-between",
+            
+            
+            
+           
             
         },
-        postPhoto:{
-            height:"100%",
-            width:"100%"
+        photo:{
+            justifyContent:"center",
+            alignItems:"center",
+            height:200,
+            width:200
         },
 
         like:{
             height:35,
-            width:35
+            width:35,
+            marginLeft:20,
+            marginRight:20
+        
         },
         rt:{
             height:40,
-            width:40
+            width:40,
+            marginLeft:20,
+            marginRight:20
         },
         coment:{
             height:40,
-            width:40
+            width:40,
+            marginLeft:20,
+            marginRight:20
         }
 
 })

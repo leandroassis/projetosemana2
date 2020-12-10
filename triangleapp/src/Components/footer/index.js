@@ -16,9 +16,11 @@ const styles = StyleSheet.create({
     container:{
         flexDirection: "row",
         width:"100%",
-        bottom:0,
-        height:30,
+        marginBottom:-5,
+        height:10,
         paddingLeft:40,
-         paddingTop:20
+        paddingTop:20,
+        
+        borderTopWidth:1
     },
 });

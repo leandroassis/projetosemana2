@@ -3,15 +3,15 @@ import { StyleSheet, StatusBar, Text, View, FlatList } from 'react-native';
 
 import Header from "../../Components/Header/index";
 import Stories from "../../Components/Stories/index";
-//import Body from "./src/Components/body"
+
 import Footer from "../../Components/footer"
 import Post from "../../Components/newPost"
-//import Counter from "./src/Components/counter"
-//import Flatlist from "./src/Components/bodyFlatlist"
+import PostCounter from "../../Components/PostCounter/index"
+
 import Item from "../../Components/Item/index"
 
 
-export default function App() {
+export default function Feed() {
  const list = [
    {
     id:1,
@@ -69,6 +69,7 @@ export default function App() {
       keyExtractor = {(item) =>item.id.toString() }
       renderItem={({item}) => <Item imageUser={item.userPhoto} nickname={item.nickname} username={item.username} message={item.message} imagePost={item.photoMessage}/>
        }    />
+      
       
       <Footer/>
       <Post/>

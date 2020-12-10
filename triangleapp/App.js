@@ -11,7 +11,7 @@ import { StyleSheet, StatusBar, Text, View, FlatList } from 'react-native';
 //import Flatlist from "./src/Components/bodyFlatlist"
 //import Item from "./src/Components/Item/index"
 
-import PostCounter from "./src/Components/PostCounter/index"
+
 import Feed from "./src/Pages/Feed/index"
 
 export default function App() {
