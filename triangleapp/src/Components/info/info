@@ -1,0 +1,18 @@
+        id:1,
+        photoSrc: require("../Images/usuario7.png") ,
+        Nickname: "Júlia",
+        Username: "@julia_chagas",
+        Message: "amando fazer o projeto da Fluxo!"  ,
+        Comments: require('../Images/coment-icon.png'),
+        Shares:require('../Images/rt-icon.png') ,
+        Likes:require('../Images/like-icon.jpg')
+
+
+         id:2,
+        photoSrc: require("../Images/usuario3.png") ,
+        Nickname: "Bruno",
+        Username: "@bruno_aguiar",
+        Message: "Ajudei a galera no Git!"  ,
+        Comments: require('../Images/coment-icon.png'),
+        Shares:require('../Images/rt-icon.png') ,
+        Likes:require('../Images/like-icon.jpg')

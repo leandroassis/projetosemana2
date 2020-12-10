@@ -4,7 +4,7 @@ import {StyleSheet, View, Text, Image} from 'react-native';
 export default function Post() {
     return(
         <View style={styles.container}>
-            <Image source={require("./lamp.png")} style={{width:20,height:20, borderRadius:10}} backgroundColor={"#a9a9a9"}/>
+            <Image source={require("../Images/lamp.png")} style={{width:20,height:20, borderRadius:10}} backgroundColor={"#a9a9a9"}/>
             <Text style={styles.letra}> 10 Novas Postagens!!</Text>
         </View>
     );

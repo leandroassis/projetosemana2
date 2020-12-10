@@ -4,7 +4,7 @@ import {StyleSheet, View, Image} from 'react-native';
 export default function Post() {
     return(
         <View style={styles.container}>
-            <Image source={require("./204040-200.png")} style={{width:55,height:55}}/>
+            <Image source={require("../Images/204040-200.png")} style={{width:55,height:55}}/>
         </View>
     );
 }

@@ -10,9 +10,9 @@ export default function Pub({name,user,msg, photoScr, photoPub}) {
                 <Text style={{top:8, left:20, fontWeight:"bold", fontSize:16}}>{name} - {user}</Text>
                 <Text style={{left:30,top:12, fontSize:15}}>{msg}</Text>
             <View style={{flexDirection:"row", marginVertical: 20, borderBottomColor:"black"}}>
-                <Image source={require('./coment-icon.png')} style={{width:25,height:25, borderRadius:100, marginLeft:20}}/>
-                <Image source={require('./rt-icon.png')} style={{width:25,height:25, borderRadius:100, marginLeft:95}}/>
-                <Image source={require('./like-icon.jpg')} style={{width:22,height:22, borderRadius:1, marginLeft:105}}/>
+                <Image source={require('../Images/coment-icon.png')} style={{width:25,height:25, borderRadius:100, marginLeft:20}}/>
+                <Image source={require('../Images/rt-icon.png')} style={{width:25,height:25, borderRadius:100, marginLeft:95}}/>
+                <Image source={require('../Images/like-icon.jpg')} style={{width:22,height:22, borderRadius:1, marginLeft:105}}/>
             </View>
            </View>
         </View>
