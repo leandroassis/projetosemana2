@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { StyleSheet, View, FlatList, TouchableOpacity, Text } from 'react-native';
+import { StyleSheet, StatusBar, Text, View, FlatList, SectionList } from 'react-native';
 
 import Header from "../../Components/Header/index";
 import Stories from "../../Components/Stories/index";
@@ -12,7 +12,7 @@ import Item from "../../Components/Item/index"
 
 
 export default function Feed({navigation,route}) {
- const [list,setList] = useState([
+ const list = [
    {
     id:1,
     userPhoto: require("../../Components/Images/usuario7.png"),
@@ -70,27 +70,33 @@ export default function Feed({navigation,route}) {
     coment:"TriΔngle tá On!"
     
    }
- ])
-  const index = list.length -1
-  const lastId = list[index].id 
-  const [postCounter, setCounter2] = useState(5)
-  function AddNewItem(){
+ ]
+
+ function AddNewItem(){
+    const index = list.length -1
+    const lastId = list[index].id 
     const NewItem = {
-      id: lastId+1,
+      id:lastId+1,
       userPhoto: require("../../Components/Images/gaia.jpeg"),
       nickname: "Gaia",
       username: "@dog_gaia",
-      message: "Um Feliz Natal para todos! AUAU",
+      message: "",
       photoMessage: "",
       likesCount:44,
       nickComent:"Leandro: ",
-      coment:"Boas Festas!!!"
+      coment:""
    }
     let newList = list
     newList.push(NewItem);
     setList(newList);
-    setCounter2(postCounter+1)
-  }
+ }
+ 
+ const [postCounter, setCounter] = useState(5)
+ function increment(){
+   setCounter(postCounter+1)
+ }
+
+
   return (
     <View style={styles.container}>
     
@@ -113,10 +119,7 @@ export default function Feed({navigation,route}) {
       
       <Counter postCounter={postCounter}/>
       <Footer/>
-      <TouchableOpacity style={styles.UnderButtom} onPress={AddNewItem}>
-        <Text style={{color:"black", fontSize:50,}}>+</Text>
-      </TouchableOpacity>
-      <Post navigation={navigation} listLenght={lastId}/>
+      <Post navigation={navigation}/>
     </View>
   );
 }
@@ -126,16 +129,5 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     height: "100%",
-  },
-  UnderButtom:{
-    position:"absolute",
-    marginTop:690,
-    marginLeft:27,
-    backgroundColor:"#a9a9a9",
-    borderRadius:100,
-    height:60,
-    width:60,
-    alignItems:"center",
-    justifyContent:"center",
-},
+  }
 });
