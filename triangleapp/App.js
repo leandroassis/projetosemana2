@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, StatusBar, Text, View, FlatList } from 'react-native';
+import { StyleSheet, StatusBar, View } from 'react-native';
 
 
 //import Header from "./src/Components/Header/index";
@@ -13,6 +13,8 @@ import { StyleSheet, StatusBar, Text, View, FlatList } from 'react-native';
 
 
 import Feed from "./src/Pages/Feed/index"
+
+
 
 export default function App() {
  
