@@ -1,5 +1,5 @@
-import React from 'react';
-import { StyleSheet, StatusBar, Text, View, FlatList } from 'react-native';
+import React, {useState} from 'react';
+import { StyleSheet, StatusBar, Text, View, FlatList, SectionList } from 'react-native';
 
 import Header from "../../Components/Header/index";
 import Stories from "../../Components/Stories/index";
@@ -72,8 +72,26 @@ export default function Feed({navigation}) {
    }
  ]
 
-
-
+ function AddNewItem(){
+    const index = list.length -1
+    const lastId = list[index].id 
+    const NewItem = {
+      id:lastId+1,
+      userPhoto: require("../../Components/Images/gaia.jpeg"),
+      nickname: "Gaia",
+      username: "@dog_gaia",
+      message: "",
+      photoMessage: "",
+      likesCount:44,
+      nickComent:"Leandro: ",
+      coment:""
+   }
+    let newList = list
+    newList.push(NewItem);
+    setList(newList);
+    const [postCounter, setCounter] = useState(5)
+    setCounter(postCounter+1)
+ }
 
 
   return (
@@ -83,7 +101,8 @@ export default function Feed({navigation}) {
       <Stories  />
       
       <FlatList 
-      data={list} 
+      data={list}
+      inverted={true}
       keyExtractor = {(item) =>item.id.toString() }
       renderItem={({item}) => <Item imageUser={item.userPhoto}
                                     nickname={item.nickname} 
@@ -95,7 +114,7 @@ export default function Feed({navigation}) {
                                     coment={item.coment}/>
        }    />
       
-      <Counter postCounter={0}/>
+      <Counter postCounter={postCounter}/>
       <Footer/>
       <Post navigation={navigation}/>
     </View>
