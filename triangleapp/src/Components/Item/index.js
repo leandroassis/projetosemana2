@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import { StyleSheet, Text, View,Image, TouchableOpacity} from 'react-native';
 
-export default function Item ({nickname, username,message,imageUser,imagePost,likesCount}) {
+export default function Item ({nickname, username,message,imageUser,imagePost,likesCount,nickComent,coment}) {
    
     function renderImage(){
         if(imagePost) {
@@ -53,6 +53,15 @@ export default function Item ({nickname, username,message,imageUser,imagePost,li
                         <Image style={styles.coment} source={require("../Images/coment-icon-removebg-preview.png")}/>
                         <Image style={styles.rt} source={require("../Images/rt-icon-removebg-preview.png")}/>
                     </View>
+                    <View style={styles.containerComent}>
+                        <View>
+                        <Text style={styles.nickComent}>{nickComent}</Text>
+                        </View>
+                        <View>
+                        <Text style={styles.comentText}>{coment}</Text>
+                        </View>
+
+                    </View>
                 
 
                 
@@ -66,9 +75,10 @@ export default function Item ({nickname, username,message,imageUser,imagePost,li
           flex: 1,
           flexDirection:"column",
           backgroundColor: '#778899',
-          justifyContent:"flex-start",
+          justifyContent:"center",
           alignItems: 'center',
           width: 385,
+          
           
           borderRadius:20,
           margin:20
@@ -149,6 +159,28 @@ export default function Item ({nickname, username,message,imageUser,imagePost,li
         },
         likeCount:{
             paddingTop:10
+        },
+        containerComent:{
+            paddingTop:15,
+            borderTopWidth:1,
+            borderColor:"#dcdcdc",
+            flexDirection:"row",
+           paddingBottom:15,
+           justifyContent:"center",
+           alignItems:"center",
+            width:270,
+            height:40
+        },
+        nickComent:{
+           
+            fontWeight:"bold",
+            
+
+        },
+        comentText:{
+            width:270
+            
+
         }
 
 })

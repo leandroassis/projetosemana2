@@ -6,7 +6,7 @@ import Stories from "../../Components/Stories/index";
 
 import Footer from "../../Components/footer"
 import Post from "../../Components/newPost"
-import PostCounter from "../../Components/PostCounter/index"
+
 
 import Item from "../../Components/Item/index"
 
@@ -20,7 +20,9 @@ export default function Feed() {
     username: "@julia_chagas",
     message: "Amando fazer o projeto da Fluxo!",
     photoMessage: require("../../Components/Images/orangeHeart.jpg"),
-    likesCount: 8
+    likesCount: 8,
+    nickComent:"Giovanni: ",
+    coment:"Irado!Boa Sorte no projeto!! "
    },
    {
     id:2,
@@ -29,7 +31,9 @@ export default function Feed() {
     username: "@bruno_aguiar",
     message: "Ajudei a galera no Git!",
     photoMessage:"",
-    likesCount:5
+    likesCount:5,
+    nickComent:"Isabela: ",
+    coment:"Você é fera, Bruno!"
    },
    {
     id:3,
@@ -38,7 +42,9 @@ export default function Feed() {
     username: "@ruth_menezes",
     message: "A galera do PAME 20.1.2 tá dando a vida!!",
     photoMessage:"",
-    likesCount:9
+    likesCount:9,
+    nickComent:"Isabella: ",
+    coment:"Verdade! Assim que a gente gosta!"
    },
    {
     id:4,
@@ -47,17 +53,21 @@ export default function Feed() {
     username: "@dog_gaia",
     message: "auauau!",
     photoMessage: require("../../Components/Images/fotodog.jpeg"),
-    likesCount:600
+    likesCount:600,
+    nickComent:"Julia: ",
+    coment:"Que fofo!"
     
    },
    {
     id:5,
     userPhoto: require("../../Components/Images/logo_triangle.jpg"),
     nickname: "Triangle",
-    username: "@triangleApp",
-    message: "Bem Vindos ao Triangle!",
+    username: "@triΔngleApp",
+    message: "Bem Vindos ao TriΔngle!",
     photoMessage: require("../../Components/Images/logo_triangle.jpg"),
-    likesCount:2
+    likesCount:2,
+    nickComent:"Leandro: ",
+    coment:"TriΔngle tá On!"
     
    }
  ]
@@ -75,8 +85,20 @@ export default function Feed() {
       <FlatList 
       data={list} 
       keyExtractor = {(item) =>item.id.toString() }
+<<<<<<< HEAD
       renderItem={({item}) => <Item imageUser={item.userPhoto} nickname={item.nickname} username={item.username} message={item.message} imagePost={item.photoMessage} likesCount={item.likesCount}/>
        } />
+=======
+      renderItem={({item}) => <Item imageUser={item.userPhoto}
+                                    nickname={item.nickname} 
+                                    username={item.username}
+                                    message={item.message} 
+                                    imagePost={item.photoMessage}
+                                    likesCount={item.likesCount}
+                                    nickComent={item.nickComent}
+                                    coment={item.coment}/>
+       }    />
+>>>>>>> ad2b1d81e68384c8c2cf20f059ed20eba6d60d6c
       
       
       <Footer/>
