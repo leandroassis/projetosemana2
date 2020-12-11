@@ -1,15 +1,15 @@
 import React from "react";
 import { View, StyleSheet, Image, Text } from "react-native";
-import { SimpleLineIcons } from '@expo/vector-icons';
+
 
 export default function HeaderProfile() {
     return(
         <View style={styles.container} >
             <View style={styles.userPhotoContainer}>
-                <Image style={styles.userPhoto} source={require("../Images/usuario7.png")} />
+                <Image style={styles.userPhoto} source={require("../Images/gaia.jpeg")} />
             
            
-                <Text style={{fontSize:20, fontWeight:"bold", marginLeft:10}}>Júlia - @julia_chagas</Text>
+                <Text style={{fontSize:20, fontWeight:"bold", marginLeft:10}}>Gaia - @dog_gaia</Text>
             </View>
             <View style={styles.userStatsContainer}>
                 <View style={styles.userStatsIcons}>

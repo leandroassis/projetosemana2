@@ -10,13 +10,13 @@ export default function Profile() {
       {
        id:1,
        userPhoto: require("../../Components/Images/usuario7.png"),
-       nickname: "Júlia",
-       username: "@julia_chagas",
-       message: "Amando fazer o projeto da Fluxo!",
-       photoMessage: require("../../Components/Images/orangeHeart.jpg"),
-       likesCount: 8,
-       nickComent:"Giovanni: ",
-       coment:" Irado! Boa Sorte no projeto!! "
+       nickname: "Gaia",
+       username: "@dog_gaia",
+       message: "auauau!",
+       photoMessage: require("../../Components/Images/fotodog.jpeg"),
+       likesCount: 600,
+       nickComent:"Júlia: ",
+       coment:" Que fofo!! "
       }
        ]
 
