@@ -10,7 +10,6 @@ import { StyleSheet, StatusBar, Text, View, FlatList } from 'react-native';
 //import Counter from "./src/Components/counter"
 //import Flatlist from "./src/Components/bodyFlatlist"
 //import Item from "./src/Components/Item/index"
-import WritePostView from "./src/Pages/WritePost"
 
 
 import Feed from "./src/Pages/Feed/index"
@@ -18,14 +17,10 @@ import Feed from "./src/Pages/Feed/index"
 export default function App() {
  
   return (
-      <View style={styles.container}>
-        <WritePostView/>
-
-      </View>
-//    <View style={styles.container}>
-//      <StatusBar backgroundColor = {"#a9a9a9"}/>
-//      <Feed/>
-//    </View>
+    <View style={styles.container}>
+      <StatusBar backgroundColor = {"#a9a9a9"}/>
+      <Feed/>
+    </View>
   );
 }
 
