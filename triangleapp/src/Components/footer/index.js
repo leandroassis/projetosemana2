@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         width:"100%",
         marginBottom:50,
-        height:0,
+        height:"1%",
         paddingLeft:40,
         paddingTop:5,
         
