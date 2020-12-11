@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { StyleSheet, StatusBar, Text, View, FlatList, SectionList } from 'react-native';
+import { StyleSheet, Text, View, FlatList,TouchableOpacity } from 'react-native';
 
 import Header from "../../Components/Header/index";
 import Stories from "../../Components/Stories/index";
@@ -12,7 +12,7 @@ import Item from "../../Components/Item/index"
 
 
 export default function Feed({navigation,route}) {
- const list = [
+ const [list,setList] = useState([
    {
     id:1,
     userPhoto: require("../../Components/Images/usuario7.png"),
@@ -70,30 +70,27 @@ export default function Feed({navigation,route}) {
     coment:"TriΔngle tá On!"
     
    }
- ]
+ ])
 
+ const [postCounter, setCounter] = useState(5)
  function AddNewItem(){
     const index = list.length -1
-    const lastId = list[index].id 
+    const lastId = list[index].id
     const NewItem = {
       id:lastId+1,
       userPhoto: require("../../Components/Images/gaia.jpeg"),
       nickname: "Gaia",
       username: "@dog_gaia",
-      message: "",
+      message: "Feliz Natal",
       photoMessage: "",
       likesCount:44,
       nickComent:"Leandro: ",
-      coment:""
+      coment:"Boas Festas!!!"
    }
     let newList = list
     newList.push(NewItem);
     setList(newList);
- }
- 
- const [postCounter, setCounter] = useState(5)
- function increment(){
-   setCounter(postCounter+1)
+    setCounter(postCounter+1)
  }
 
 
@@ -119,6 +116,10 @@ export default function Feed({navigation,route}) {
       
       <Counter postCounter={postCounter}/>
       <Footer navigation ={navigation}/>
+      <Footer/>
+      <TouchableOpacity style={styles.buttom} onPress={AddNewItem}>
+        <Text style={{fontSize:50, }}>+</Text>
+      </TouchableOpacity>
       <Post navigation={navigation}/>
     </View>
   );
@@ -129,5 +130,16 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     height: "100%",
-  }
+  },
+  buttom:{
+    position:"absolute",
+    marginTop:690,
+    marginLeft:35,
+    backgroundColor:"#a9a9a9",
+    borderRadius:100,
+    height:60,
+    width:60,
+    alignItems:"center",
+    justifyContent:"center",
+},
 });
