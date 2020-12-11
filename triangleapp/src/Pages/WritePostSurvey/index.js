@@ -1,14 +1,15 @@
 import React from 'react';
-import { StyleSheet,View, TouchableOpacity, Text, TextInput, KeyboardAvoidingView, Image} from 'react-native';
+import { StyleSheet,View, TouchableOpacity, StatusBar, Text, TextInput, KeyboardAvoidingView, Image} from 'react-native';
 
 
-export default function WritePostSurvey() {
+export default function WritePostSurvey({navigation}) {
  
   return (
     <KeyboardAvoidingView style={styles.container} behavior={"padding"}>
       <View style={styles.container}>
+      <StatusBar backgroundColor={"#778899"}/>
           <View style={styles.header}>
-              <TouchableOpacity onPress={null} style={styles.headerPost} >
+              <TouchableOpacity onPress={()=>navigation.navigate("Feed")} style={styles.headerPost} >
                   <Text style={styles.headerButtom}>Fechar</Text>
               </TouchableOpacity>
               <TouchableOpacity onPress={null} style={styles.headerPostRight} >
@@ -18,10 +19,10 @@ export default function WritePostSurvey() {
           <View style={styles.Text}>
               <Image source={require("../../Components/Images/gaia.jpeg")} style={styles.photo} />
               <View style={{width:330,marginTop:15}}>
-                <TextInput placeholder="Faça uma pergunta..." maxLength={200} autoFocus={true} multiline={true} onChangeText={null} style={{width:"100%"}} />
+                <TextInput placeholder="Faça uma pergunta..." maxLength={200} autoFocus={true} multiline={true} onChangeText={null} style={{width:"100%", fontSize:20}} />
                 <View style={styles.Survey}>
-                    <TextInput placeholder="Opção 1" maxLength={25} style={styles.surveyStyle} />
-                    <TextInput placeholder="Opção 2" maxLength={25} style={styles.surveyStyle}/>
+                    <TextInput placeholder="Opção 1" autoFocus={true} maxLength={25} style={styles.surveyStyle} />
+                    <TextInput placeholder="Opção 2" autoFocus={true} maxLength={25} style={styles.surveyStyle}/>
                 </View>
               </View>
           </View>
@@ -40,8 +41,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header:{
-    flexDirection:"row",
-    marginTop:30,  
+    flexDirection:"row",  
     backgroundColor:"#778899",
     width:"100%",
     height:60,
@@ -106,6 +106,7 @@ const styles = StyleSheet.create({
   surveyStyle:{
     borderWidth:1,
     borderColor:"#a9a9a9",
+    borderRadius: 10,
     width:330,
     height:50,
     marginBottom:10

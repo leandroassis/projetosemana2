@@ -20,13 +20,8 @@ const styles = StyleSheet.create({
         backgroundColor:"#fff",
         flexDirection: "row",
         width:"100%",
-<<<<<<< HEAD
         marginBottom:50,
-        height:10,
-=======
-        marginBottom:-10,
         height:0,
->>>>>>> ad2b1d81e68384c8c2cf20f059ed20eba6d60d6c
         paddingLeft:40,
         paddingTop:5,
         

@@ -11,7 +11,7 @@ import Post from "../../Components/newPost"
 import Item from "../../Components/Item/index"
 
 
-export default function Feed() {
+export default function Feed({navigation}) {
  const list = [
    {
     id:1,
@@ -85,10 +85,6 @@ export default function Feed() {
       <FlatList 
       data={list} 
       keyExtractor = {(item) =>item.id.toString() }
-<<<<<<< HEAD
-      renderItem={({item}) => <Item imageUser={item.userPhoto} nickname={item.nickname} username={item.username} message={item.message} imagePost={item.photoMessage} likesCount={item.likesCount}/>
-       } />
-=======
       renderItem={({item}) => <Item imageUser={item.userPhoto}
                                     nickname={item.nickname} 
                                     username={item.username}
@@ -98,11 +94,10 @@ export default function Feed() {
                                     nickComent={item.nickComent}
                                     coment={item.coment}/>
        }    />
->>>>>>> ad2b1d81e68384c8c2cf20f059ed20eba6d60d6c
       
       
       <Footer/>
-      <Post/>
+      <Post navigation={navigation}/>
     </View>
   );
 }

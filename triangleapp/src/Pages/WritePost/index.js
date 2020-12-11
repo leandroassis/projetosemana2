@@ -1,14 +1,15 @@
 import React from 'react';
-import { StyleSheet,View, TouchableOpacity, Text, TextInput, KeyboardAvoidingView, Image} from 'react-native';
+import { StyleSheet,View, TouchableOpacity, Text, StatusBar, TextInput, KeyboardAvoidingView, Image} from 'react-native';
 
 
-export default function WritePost() {
+export default function WritePost({navigation}) {
  
   return (
     <KeyboardAvoidingView style={styles.container} behavior={"padding"}>
       <View style={styles.container}>
+      <StatusBar backgroundColor={"#778899"}/>
           <View style={styles.header}>
-              <TouchableOpacity onPress={null} style={styles.headerPost} >
+              <TouchableOpacity onPress={()=> navigation.navigate("Feed")} style={styles.headerPost} >
                   <Text style={styles.headerButtom}>Fechar</Text>
               </TouchableOpacity>
               <TouchableOpacity onPress={null} style={styles.headerPostRight} >
@@ -18,11 +19,11 @@ export default function WritePost() {
           <View style={styles.Text}>
               <Image source={require("../../Components/Images/gaia.jpeg")} style={styles.photo}/>
               <View style={{width:330}}>
-              <TextInput placeholder="Escreva algo legal para postar" maxLength={200} multiline={true} onChangeText={null} autoFocus={true} style={{width:"100%", margin:20, marginLeft:5}} />
+              <TextInput placeholder="Escreva algo legal para postar" maxLength={200} multiline={true} onChangeText={null} autoFocus={true} style={{width:"100%", margin:20, marginLeft:5, fontSize:20}} />
               </View>
           </View>
           <View style={styles.footer}>
-              <TouchableOpacity onPress={null} style={styles.Survey}>
+              <TouchableOpacity onPress={()=> navigation.navigate("WritePostSurvey")} style={styles.Survey}>
                   <Text style={styles.headerButtom}>Enquete</Text>
               </TouchableOpacity> 
               <Text style={{paddingLeft:200}}>{null}/20</Text>
@@ -37,8 +38,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header:{
-    flexDirection:"row",
-    marginTop:30,  
+    flexDirection:"row",  
     backgroundColor:"#778899",
     width:"100%",
     height:60,
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   },
   Text:{
     width:"100%",
-    height:"160%",
+    height:"161%",
     flexDirection:"row"
   },
   photo:{
