@@ -5,11 +5,11 @@ import Footer from "../../Components/footer"
 import HeaderProfile from "../../Components/HeaderProfile"
 import Item from "../../Components/Item/index"
 
-export default function Profile() {
+export default function Profile(navigation,route) {
     const profilePost = [
       {
        id:1,
-       userPhoto: require("../../Components/Images/usuario7.png"),
+       userPhoto: require("../../Components/Images/gaia.jpeg"),
        nickname: "Gaia",
        username: "@dog_gaia",
        message: "auauau!",
@@ -22,6 +22,9 @@ export default function Profile() {
 
     return (
         <View style={styles.container}>
+            <TouchableOpacity onPress={()=> navigation.navigate("Feed")} style={styles.headerPost} >
+                <Text style={styles.headerButtom}>Fechar</Text>
+            </TouchableOpacity>
         
           <HeaderProfile />
           
@@ -52,7 +55,11 @@ export default function Profile() {
           backgroundColor: '#fff',
           alignItems: 'center',
           height: "100%",
-        }
+        },
+        headerButtom:{
+            color:"white",
+            fontSize:16,
+          },
       });
       
 

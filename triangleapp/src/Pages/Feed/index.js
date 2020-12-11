@@ -118,7 +118,7 @@ export default function Feed({navigation,route}) {
        }    />
       
       <Counter postCounter={postCounter}/>
-      <Footer/>
+      <Footer navigation ={navigation}/>
       <Post navigation={navigation}/>
     </View>
   );

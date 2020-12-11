@@ -15,9 +15,9 @@ export default function Post({navigation}) {
 const styles = StyleSheet.create({
     container:{
         position:"absolute",
-        marginTop:690,
+        marginTop:"100%",
         marginLeft:340,
-        marginBottom:100,
+       
         backgroundColor:"#a9a9a9",
         borderRadius:100,
         height:60,

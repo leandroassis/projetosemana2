@@ -3,6 +3,7 @@ import React from 'react';
 import { StyleSheet, StatusBar, View } from 'react-native';
 
 import FeedToWritePost from "./src/Routes/WritePost.routes";
+
 import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {
@@ -11,6 +12,7 @@ export default function App() {
       <View style={styles.container}>
         <StatusBar backgroundColor = {"#a9a9a9"}/>
         <FeedToWritePost/>
+        
       </View>
     </NavigationContainer>
   );
