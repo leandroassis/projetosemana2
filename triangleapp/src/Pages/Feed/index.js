@@ -89,8 +89,11 @@ export default function Feed({navigation}) {
     let newList = list
     newList.push(NewItem);
     setList(newList);
-    const [postCounter, setCounter] = useState(5)
-    setCounter(postCounter+1)
+ }
+ 
+ const [postCounter, setCounter] = useState(5)
+ function increment(){
+   setCounter(postCounter+1)
  }
 
 

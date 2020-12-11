@@ -16,7 +16,7 @@ export default function WritePostSurvey({navigation}) {
               <TouchableOpacity onPress={()=>navigation.navigate("Feed")} style={styles.headerPost} >
                   <Text style={styles.headerButtom}>Fechar</Text>
               </TouchableOpacity>
-              <TouchableOpacity onPress={null} style={styles.headerPostRight} >
+              <TouchableOpacity onPress={() => navigation.navigate("Feed",{message:"AloAlo"})} style={styles.headerPostRight} >
                   <Text style={styles.headerButtom}>Enviar</Text>
               </TouchableOpacity>
           </View>
