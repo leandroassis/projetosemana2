@@ -11,7 +11,7 @@ import Counter from "../../Components/counter"
 import Item from "../../Components/Item/index"
 
 
-export default function Feed({navigation}) {
+export default function Feed({navigation,route}) {
  const list = [
    {
     id:1,

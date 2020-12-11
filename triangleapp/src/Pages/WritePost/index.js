@@ -3,11 +3,12 @@ import { StyleSheet,View, TouchableOpacity, Text, StatusBar, TextInput, Keyboard
 import { set } from 'react-native-reanimated';
 
 
-export default function WritePost({navigation}) {
+export default function WritePost({navigation,route}) {
   const [counter,setCounter] = useState(0);
   function incrementOnType(){
     setCounter(counter+1);
   }
+  const [postText, setPostText] = React.useState("");
   return (
     <KeyboardAvoidingView style={styles.container} behavior={"padding"}>
       <View style={styles.container}>
