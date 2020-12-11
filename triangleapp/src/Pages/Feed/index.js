@@ -116,7 +116,7 @@ export default function Feed({navigation,route}) {
       
       <Counter postCounter={postCounter}/>
       <Footer navigation ={navigation}/>
-      <Footer/>
+      
       <TouchableOpacity style={styles.buttom} onPress={AddNewItem}>
         <Text style={{fontSize:50, }}>+</Text>
       </TouchableOpacity>
