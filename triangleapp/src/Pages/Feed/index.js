@@ -6,7 +6,7 @@ import Stories from "../../Components/Stories/index";
 
 import Footer from "../../Components/footer"
 import Post from "../../Components/newPost"
-
+import Counter from "../../Components/counter"
 
 import Item from "../../Components/Item/index"
 
@@ -95,7 +95,7 @@ export default function Feed({navigation}) {
                                     coment={item.coment}/>
        }    />
       
-      
+      <Counter postCounter={0}/>
       <Footer/>
       <Post navigation={navigation}/>
     </View>

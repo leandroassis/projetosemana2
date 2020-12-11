@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet,View, TouchableOpacity, Text, StatusBar, TextInput, KeyboardAvoidingView, Image} from 'react-native';
+import { set } from 'react-native-reanimated';
 
 
 export default function WritePost({navigation}) {
- 
+  const [counter,setCounter] = useState(0);
+  function incrementOnType(){
+    setCounter(counter+1);
+  }
+  function decrementOnBackspace(){
+    setCounter(counter-2);
+  }
   return (
     <KeyboardAvoidingView style={styles.container} behavior={"padding"}>
       <View style={styles.container}>
@@ -19,14 +26,14 @@ export default function WritePost({navigation}) {
           <View style={styles.Text}>
               <Image source={require("../../Components/Images/gaia.jpeg")} style={styles.photo}/>
               <View style={{width:330}}>
-              <TextInput placeholder="Escreva algo legal para postar" maxLength={200} multiline={true} onChangeText={null} autoFocus={true} style={{width:"100%", margin:20, marginLeft:5, fontSize:20}} />
+              <TextInput placeholder="Escreva algo legal para postar" maxLength={200} multiline={true} onChangeText={incrementOnType}  autoFocus={true} style={{width:"100%", margin:20, marginLeft:5, fontSize:20}} />
               </View>
           </View>
           <View style={styles.footer}>
               <TouchableOpacity onPress={()=> navigation.navigate("WritePostSurvey")} style={styles.Survey}>
                   <Text style={styles.headerButtom}>Enquete</Text>
               </TouchableOpacity> 
-              <Text style={{paddingLeft:200}}>{null}/20</Text>
+              <Text style={{paddingLeft:200, color:"white"}}>{counter}/200</Text>
           </View>
       </View>
     </KeyboardAvoidingView>
